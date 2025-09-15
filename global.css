@@ -1,17 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>Anisha Server - AI Interface</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MAISHAK Server - AI Interface</title>
+    <style>
+      /* Base reset */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #f0f0f0;
+      }
+      main.iphone {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 28px;
+        padding: 30px 25px;
+        width: 360px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      section.div header {
+        text-align: center;
+      }
+      .text-wrapper {
+        font-size: 2.25rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        margin-bottom: 6px;
+        text-shadow: 0 0 5px #a39aff;
+      }
+      .text-wrapper-2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        opacity: 0.85;
+        letter-spacing: 0.05em;
+      }
+
+      nav.overlap-group,
+      nav.overlap {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      button.rectangle,
+      button.rectangle-2,
+      button.rectangle-3 {
+        background: rgba(255, 255, 255, 0.15);
+        border: none;
+        border-radius: 18px;
+        padding: 18px 38px;
+        color: #e0e0ff;
+        font-weight: 600;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 0 12px rgba(163, 154, 255, 0.6);
+        transition: all 0.35s ease;
+        flex: 1;
+        text-align: center;
+        user-select: none;
+        letter-spacing: 0.1em;
+      }
+      button.rectangle:hover,
+      button.rectangle-2:hover,
+      button.rectangle-3:hover {
+        background: #a399ff;
+        color: #2a2a72;
+        box-shadow: 0 0 24px #a399ff;
+        transform: translateY(-6px) scale(1.05);
+      }
+
+      .text-wrapper-3,
+      .text-wrapper-4,
+      .text-wrapper-5,
+      .text-wrapper-6 {
+        user-select: none;
+      }
+      .text-wrapper-3,
+      .text-wrapper-4,
+      .text-wrapper-5 {
+        font-weight: 600;
+        letter-spacing: 0.15em;
+      }
+      .text-wrapper-3 {
+        color: #b0aaff;
+      }
+      .text-wrapper-4 {
+        color: #d0c1ff;
+      }
+      .text-wrapper-5 {
+        color: #9589ff;
+      }
+
+      section.div-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+      button.ai-button {
+        background: linear-gradient(135deg, #ff8a00, #e52e71);
+        border: none;
+        border-radius: 25px;
+        padding: 20px 60px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(229, 46, 113, 0.8);
+        transition: all 0.3s ease;
+        user-select: none;
+        letter-spacing: 0.15em;
+      }
+      button.ai-button:hover {
+        box-shadow: 0 10px 30px rgba(255, 137, 0, 0.8);
+        transform: translateY(-5px) scale(1.1);
+      }
+    </style>
   </head>
   <body>
-    <main class="iphone">
+    <main class="iphone" role="main" aria-label="MAISHAK Server interface">
       <section class="div">
         <header>
-          <h1 class="text-wrapper">ANISHA SERVER</h1>
+          <h1 class="text-wrapper">MAISHAK SERVER</h1>
           <h2 class="text-wrapper-2">Hello Welcome</h2>
         </header>
         <nav class="overlap-group" role="navigation" aria-label="AI options row 1">
