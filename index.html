@@ -1,158 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAISHAK Server</title>
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Google Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: linear-gradient(135deg, #1f4068, #2980b9);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+.container {
+  max-width: 480px;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  text-align: center;
+}
 
-    
-    }
+.header .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 
-    /* Server Section Box */
-    .iphone {
-      width: 100%;
-      max-width: 400px;
-      min-height: 500px;
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 25px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      padding: 25px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+.header .subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #a0c4ff;
+  margin-bottom: 2rem;
+}
 
-      /* Only fade-in animation */
-      animation: fadeInUp 1s ease-out;
-    }
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-    /* Fade-in from bottom */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+.ai-card {
+  background: linear-gradient(145deg, #3a5068, #2c3e50);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #d0e8ff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
 
-    .header {
-      text-align: center;
-    }
+.ai-card .icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
 
-    .text-wrapper {
-      font-size: clamp(20px, 4vw, 26px);
-      font-weight: 700;
-      color: #111;
-    }
+.ai-card:hover,
+.ai-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 120, 255, 0.6);
+  outline: none;
+}
 
-    .text-wrapper-2 {
-      font-size: clamp(14px, 3vw, 16px);
-      color: #444;
-      margin-top: 6px;
-      font-weight: 500;
-    }
+.main-action {
+  margin-top: 1rem;
+}
 
-    .text-wrapper-3 {
-      font-size: clamp(12px, 2.5vw, 14px);
-      color: #2a9d8f;
-      margin-top: 4px;
-      font-weight: 600;
-    }
+.main-ai-button {
+  background: #00a8cc;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 168, 204, 0.7);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-    .menu {
-      display: grid;
-      gap: 12px;
-    }
+.main-ai-button .main-icon {
+  font-size: 2rem;
+}
 
-    .rectangle {
-      padding: 14px;
-      border-radius: 12px;
-      background-color: #f9f9f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 500;
-      font-size: clamp(14px, 3vw, 16px);
-      color: #333;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      text-align: center;
-    }
+.main-ai-button:hover,
+.main-ai-button:focus {
+  background-color: #007a99;
+  transform: scale(1.05);
+  outline: none;
+}
 
-    .rectangle:hover {
-      background-color: #2a9d8f;
-      color: #fff;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 6px 14px rgba(42,157,143,0.35);
-    }
-
-    .footer {
-      text-align: center;
-    }
-
-    .text-wrapper-6 {
-      font-size: clamp(12px, 2.5vw, 13px);
-      color: #555;
-      font-weight: 500;
-    }
-
-    /* Tablet - show 2 columns */
-    @media (min-width: 600px) {
-      .menu {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    /* Desktop - larger box */
-    @media (min-width: 1024px) {
-      .iphone {
-        max-width: 500px;
-        min-height: 600px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="iphone">
-    <div class="header">
-      <div class="text-wrapper">MAISHAK SERVER</div>
-      <div class="text-wrapper-2">Hello Guys!</div>
-      <div class="text-wrapper-3">Welcome To My Server 👋</div>
-    </div>
-
-    <div class="menu">
-      <!-- Replace file paths with your real material -->
-      <a href="timetable.jpg" download class="rectangle">📘 Time Table</a>
-      <a href="DBMS 1.pdf" download class="rectangle">💾 DBMS</a>
-      <a href="" download class="rectangle">📟 ADLD</a>
-      <a href="AI.pdf" download class="rectangle">🤖 AI</a>
-      <a href="ADLD LAB.pdf" download class="rectangle">📂 ADLD LAB</a>
-      <a href="SAC LAB.docx" download class="rectangle">📂 SAC LAB</a>
-      <a href="SQL.pdf" download class="rectangle">📂 SQL LAB</a>
-    </div>
-
-    <div class="footer">
-      <div class="text-wrapper-6"></div>
-    </div>
-  </div>
-
-</body>
-</html>
 
 
 
