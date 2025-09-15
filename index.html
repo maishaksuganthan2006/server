@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MAISHAK Server - Anime Style</title>
+  <title>MAISHAK Server - One Piece Gear 5 Style</title>
 
-  <!-- Google Fonts: Russo One + Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Russo+One&display=swap" rel="stylesheet" />
+  <!-- Google Fonts: Bangers + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
     /* Reset */
@@ -16,65 +16,59 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      /* Anime-style vibrant background with abstract shapes */
-      background:
-        radial-gradient(circle at 20% 30%, #ff005c, transparent 30%),
-        radial-gradient(circle at 80% 80%, #00ffe7, transparent 25%),
-        linear-gradient(135deg, #1e1e2f 0%, #4a148c 100%);
-      background-blend-mode: screen;
+      background: linear-gradient(135deg, #ff4b1f, #ff9068); /* fiery orange gradient */
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
-      color: #fff;
       overflow: hidden;
+      color: #fff;
       position: relative;
     }
-    /* Subtle animated sparkles for anime vibe */
+
+    /* Animated subtle flames background */
     body::before {
       content: "";
       position: absolute;
-      top: -20%;
-      left: -10%;
-      width: 150%;
-      height: 150%;
-      background: url('https://i.ibb.co/kXSZkp1/sparkles.png') repeat;
-      opacity: 0.12;
-      animation: moveSparkles 90s linear infinite;
-      pointer-events: none;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url('https://i.ibb.co/s2Sh9F5/gear5-flames.png') no-repeat center/cover;
+      opacity: 0.15;
+      animation: flickerFlames 5s ease-in-out infinite alternate;
       z-index: 0;
-      mix-blend-mode: screen;
+      pointer-events: none;
     }
-    @keyframes moveSparkles {
-      0% {background-position: 0 0;}
-      100% {background-position: 1000px 1000px;}
+    @keyframes flickerFlames {
+      0%, 100% {opacity: 0.15;}
+      50% {opacity: 0.25;}
     }
 
     .iphone {
       position: relative;
-      background: rgba(20, 20, 30, 0.75);
-      backdrop-filter: blur(14px);
-      border-radius: 32px;
+      background: #1b1b1b;
+      border-radius: 36px;
       box-shadow:
-        0 0 30px 3px #ff005c,
-        inset 0 0 60px rgba(255, 0, 92, 0.5);
+        0 0 40px 6px #ff4b1f,
+        inset 0 0 60px #ff9068;
       width: 100%;
-      max-width: 420px;
-      min-height: 560px;
-      padding: 36px 32px;
+      max-width: 440px;
+      min-height: 580px;
+      padding: 40px 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      animation: fadeInUp 1s ease forwards;
       z-index: 1;
-      overflow: hidden;
+      animation: punchIn 1s ease forwards;
+      user-select: none;
     }
 
-    @keyframes fadeInUp {
+    @keyframes punchIn {
       from {
         opacity: 0;
-        transform: translateY(40px) scale(0.95);
+        transform: translateY(40px) scale(0.9);
       }
       to {
         opacity: 1;
@@ -84,125 +78,145 @@
 
     .header {
       text-align: center;
-      margin-bottom: 24px;
-      animation: floatText 6s ease-in-out infinite;
-      position: relative;
-      z-index: 2;
+      margin-bottom: 28px;
+      animation: bounceHeader 6s ease-in-out infinite;
     }
-    @keyframes floatText {
+
+    @keyframes bounceHeader {
       0%, 100% { transform: translateY(0);}
-      50% { transform: translateY(-6px);}
+      50% { transform: translateY(-8px);}
     }
 
     .text-wrapper {
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(28px, 6vw, 36px);
+      font-family: 'Bangers', cursive;
+      font-size: clamp(32px, 7vw, 40px);
       font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #ff005c;
+      letter-spacing: 0.2em;
+      color: #ff4b1f;
       text-shadow:
-        0 0 6px #ff005c,
-        0 0 12px #ff1a77,
-        0 0 20px #ff66a3,
-        0 0 30px #ff99c8;
+        0 0 8px #ff4b1f,
+        0 0 20px #ff9068,
+        0 0 30px #ff3c00,
+        0 0 40px #ff6a1f;
+      text-transform: uppercase;
       user-select: none;
     }
 
     .text-wrapper-2 {
-      font-size: clamp(18px, 3.5vw, 22px);
+      font-size: clamp(18px, 4vw, 22px);
       font-weight: 600;
-      margin-top: 10px;
-      color: #00ffe7;
+      margin-top: 8px;
+      color: #ffb88c;
       letter-spacing: 0.15em;
+      text-shadow: 0 0 12px #ff9068;
       user-select: none;
-      text-shadow:
-        0 0 4px #00ffe7,
-        0 0 8px #00bfae;
     }
 
     .text-wrapper-3 {
-      font-size: clamp(15px, 3vw, 18px);
-      margin-top: 10px;
+      font-size: clamp(16px, 3vw, 18px);
+      margin-top: 12px;
       font-weight: 600;
-      color: #ff66a3;
+      color: #fff4e6;
       user-select: none;
       letter-spacing: 0.07em;
-      text-shadow: 0 0 8px #ff66a3;
+      text-shadow: 0 0 8px #ffb57e;
     }
 
     .menu {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 30px;
-      z-index: 2;
+      gap: 22px;
+      margin-top: 36px;
+      z-index: 1;
     }
 
     .rectangle {
-      background: rgba(255, 0, 92, 0.3);
-      border-radius: 20px;
-      padding: 18px 0;
+      background: #ff4b1f;
+      border-radius: 24px;
+      padding: 20px 0;
       font-weight: 700;
-      font-size: clamp(15px, 3vw, 20px);
+      font-size: clamp(16px, 3vw, 20px);
       color: #fff;
       text-align: center;
       cursor: pointer;
       user-select: none;
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow:
-        0 4px 14px rgba(255, 0, 92, 0.3),
-        inset 0 0 12px rgba(255, 0, 92, 0.6);
+        0 0 12px #ff4b1f,
+        inset 0 0 18px #ff9068;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       position: relative;
       overflow: hidden;
+      filter: drop-shadow(0 0 5px #ff4b1f);
+      transform-origin: center bottom;
+      animation: rubberBand 3s ease-in-out infinite;
     }
 
     .rectangle:hover {
-      background: linear-gradient(135deg, #ff005c, #ff66a3);
+      background: #ff9068;
       box-shadow:
-        0 0 25px #ff66a3,
-        inset 0 0 40px #ff66a3;
-      transform: translateY(-5px) scale(1.07);
+        0 0 26px #ff9068,
+        inset 0 0 30px #ff4b1f;
+      transform: translateY(-6px) scale(1.1);
       color: #fff;
+      filter: drop-shadow(0 0 12px #ff9068);
       z-index: 10;
+      animation-play-state: paused;
     }
 
-    .rectangle:focus-visible {
-      outline: 3px solid #ff66a3;
-      outline-offset: 4px;
+    /* Rubber band bounce effect */
+    @keyframes rubberBand {
+      0%, 100% {
+        transform: scale3d(1,1,1);
+      }
+      30% {
+        transform: scale3d(1.25,0.75,1);
+      }
+      40% {
+        transform: scale3d(0.75,1.25,1);
+      }
+      50% {
+        transform: scale3d(1.15,0.85,1);
+      }
+      65% {
+        transform: scale3d(0.95,1.05,1);
+      }
+      75% {
+        transform: scale3d(1.05,0.95,1);
+      }
     }
 
-    /* Animated icon (emoji) */
     .rectangle span.emoji {
       display: inline-block;
-      animation: bounceEmoji 2.5s ease-in-out infinite;
+      animation: bounceEmoji 2.8s ease-in-out infinite;
       user-select: none;
+      font-size: 22px;
+      transform-origin: center bottom;
     }
     @keyframes bounceEmoji {
       0%, 100% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-6px);
+        transform: translateY(-7px);
       }
     }
 
     .footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: clamp(12px, 2.5vw, 14px);
-      color: #ff66a3;
+      margin-top: 36px;
+      font-size: clamp(13px, 2.5vw, 16px);
+      color: #ffb87a;
       font-weight: 600;
-      opacity: 0.75;
+      opacity: 0.85;
       user-select: none;
-      letter-spacing: 0.15em;
-      text-shadow: 0 0 6px #ff66a3;
-      z-index: 2;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 10px #ff9068;
+      z-index: 1;
     }
 
     /* Responsive */
@@ -211,17 +225,17 @@
         grid-template-columns: 1fr;
       }
       .iphone {
-        min-height: 620px;
+        min-height: 640px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="iphone" role="main" aria-label="MAISHAK Server Interface">
+  <div class="iphone" role="main" aria-label="MAISHAK Server Interface - One Piece Gear 5 Style">
     <div class="header">
       <div class="text-wrapper">MAISHAK SERVER</div>
-      <div class="text-wrapper-2">Hello Guys!</div>
-      <div class="text-wrapper-3">Welcome To My Server <span aria-hidden="true">👋</span></div>
+      <div class="text-wrapper-2">Yo Ho Ho! Welcome</div>
+      <div class="text-wrapper-3">To My Gear 5 Server <span aria-hidden="true">🔥🐒</span></div>
     </div>
 
     <div class="menu">
@@ -235,4 +249,8 @@
     </div>
 
     <div class="footer">
-     
+      &copy; 2025 MAISHAK Server. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
