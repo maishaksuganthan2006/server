@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MAISHAK Server - Enhanced</title>
+  <title>MAISHAK Server - Anime Style</title>
 
-  <!-- Google Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts: Russo One + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Russo+One&display=swap" rel="stylesheet" />
 
   <style>
     /* Reset */
@@ -16,7 +16,12 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      /* Anime-style vibrant background with abstract shapes */
+      background:
+        radial-gradient(circle at 20% 30%, #ff005c, transparent 30%),
+        radial-gradient(circle at 80% 80%, #00ffe7, transparent 25%),
+        linear-gradient(135deg, #1e1e2f 0%, #4a148c 100%);
+      background-blend-mode: screen;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -26,30 +31,34 @@
       overflow: hidden;
       position: relative;
     }
-    /* subtle animated background dots for texture */
+    /* Subtle animated sparkles for anime vibe */
     body::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 30px 30px;
+      top: -20%;
+      left: -10%;
+      width: 150%;
+      height: 150%;
+      background: url('https://i.ibb.co/kXSZkp1/sparkles.png') repeat;
+      opacity: 0.12;
+      animation: moveSparkles 90s linear infinite;
       pointer-events: none;
-      animation: moveDots 60s linear infinite;
       z-index: 0;
+      mix-blend-mode: screen;
     }
-    @keyframes moveDots {
+    @keyframes moveSparkles {
       0% {background-position: 0 0;}
-      100% {background-position: 30px 30px;}
+      100% {background-position: 1000px 1000px;}
     }
 
     .iphone {
       position: relative;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(20px);
+      background: rgba(20, 20, 30, 0.75);
+      backdrop-filter: blur(14px);
       border-radius: 32px;
       box-shadow:
-        0 4px 30px rgba(0,0,0,0.3),
-        inset 0 0 60px rgba(255,255,255,0.12);
+        0 0 30px 3px #ff005c,
+        inset 0 0 60px rgba(255, 0, 92, 0.5);
       width: 100%;
       max-width: 420px;
       min-height: 560px;
@@ -86,47 +95,40 @@
     }
 
     .text-wrapper {
-      font-size: clamp(26px, 6vw, 32px);
-      font-weight: 800;
-      letter-spacing: 0.2em;
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(28px, 6vw, 36px);
+      font-weight: 700;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      background: linear-gradient(45deg, #ff6a00, #ee0979);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glowText 3s ease-in-out infinite alternate;
-      user-select: none;
+      color: #ff005c;
       text-shadow:
-        0 0 4px rgba(255,106,0,0.6),
-        0 0 10px rgba(238,9,121,0.8);
-    }
-
-    @keyframes glowText {
-      0% {
-        filter: drop-shadow(0 0 6px #ff6a00);
-      }
-      100% {
-        filter: drop-shadow(0 0 14px #ee0979);
-      }
+        0 0 6px #ff005c,
+        0 0 12px #ff1a77,
+        0 0 20px #ff66a3,
+        0 0 30px #ff99c8;
+      user-select: none;
     }
 
     .text-wrapper-2 {
-      font-size: clamp(17px, 3.5vw, 22px);
+      font-size: clamp(18px, 3.5vw, 22px);
       font-weight: 600;
       margin-top: 10px;
-      color: #ddd;
+      color: #00ffe7;
       letter-spacing: 0.15em;
       user-select: none;
-      text-shadow: 0 0 5px rgba(255 255 255 / 0.15);
+      text-shadow:
+        0 0 4px #00ffe7,
+        0 0 8px #00bfae;
     }
 
     .text-wrapper-3 {
-      font-size: clamp(14px, 3vw, 18px);
+      font-size: clamp(15px, 3vw, 18px);
       margin-top: 10px;
       font-weight: 600;
-      color: #ffa7c4;
+      color: #ff66a3;
       user-select: none;
       letter-spacing: 0.07em;
-      text-shadow: 0 0 8px #ffa7c4;
+      text-shadow: 0 0 8px #ff66a3;
     }
 
     .menu {
@@ -138,7 +140,7 @@
     }
 
     .rectangle {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 0, 92, 0.3);
       border-radius: 20px;
       padding: 18px 0;
       font-weight: 700;
@@ -149,8 +151,8 @@
       user-select: none;
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow:
-        0 6px 20px rgba(255, 255, 255, 0.15),
-        inset 0 0 10px rgba(255, 255, 255, 0.25);
+        0 4px 14px rgba(255, 0, 92, 0.3),
+        inset 0 0 12px rgba(255, 0, 92, 0.6);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -161,17 +163,17 @@
     }
 
     .rectangle:hover {
-      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      background: linear-gradient(135deg, #ff005c, #ff66a3);
       box-shadow:
-        0 12px 30px rgba(238, 9, 121, 0.9),
-        inset 0 0 30px rgba(255, 255, 255, 0.45);
+        0 0 25px #ff66a3,
+        inset 0 0 40px #ff66a3;
       transform: translateY(-5px) scale(1.07);
       color: #fff;
       z-index: 10;
     }
 
     .rectangle:focus-visible {
-      outline: 3px solid #ff6a00;
+      outline: 3px solid #ff66a3;
       outline-offset: 4px;
     }
 
@@ -194,12 +196,12 @@
       text-align: center;
       margin-top: 30px;
       font-size: clamp(12px, 2.5vw, 14px);
-      color: #eee;
-      font-weight: 500;
+      color: #ff66a3;
+      font-weight: 600;
       opacity: 0.75;
       user-select: none;
-      letter-spacing: 0.1em;
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 6px #ff66a3;
       z-index: 2;
     }
 
@@ -233,8 +235,4 @@
     </div>
 
     <div class="footer">
-      &copy; 2025 MAISHAK Server. All rights reserved.
-    </div>
-  </div>
-</body>
-</html>
+     
